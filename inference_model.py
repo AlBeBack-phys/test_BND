@@ -116,7 +116,7 @@ def segment_people(video_path, output_path, batch_size=5, threshold=0.3, mask_al
 
     # Загружаем модель Mask R-CNN
     model = torchvision.models.detection.maskrcnn_resnet50_fpn(weights=torchvision.models.detection.MaskRCNN_ResNet50_FPN_Weights.COCO_V1).to(device)
-    model.eval()
+    model = model.eval()
 
     transform = torchvision.transforms.ToTensor()
     tracker = ObjectTracker()
